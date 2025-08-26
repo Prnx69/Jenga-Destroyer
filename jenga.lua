@@ -92,25 +92,31 @@ local MainSection = MainTab:CreateSection("Main Functions")
 MainTab:CreateButton({
    Name = "Win the game (Only in Tower's team)",
    Callback = function()
-    savedCamCFrame = cam.CFrame
-    cam.CameraType = Enum.CameraType.Scriptable
-    cam.CFrame = savedCamCFrame 
-    
-        enableNoclip()
-        player.Character.HumanoidRootPart.CFrame = CFrame.new(-65, 98, -18)
-        task.wait(0.7)
-        disableNoclip()
-        player.Character.HumanoidRootPart.CFrame = CFrame.new(-68, 228, -18)
-        
-        cam.CameraType = Enum.CameraType.Custom
-        
-        Rayfield:Notify({
-            Title = "Success!",
-            Content = "Success!",
-            Duration = 2.5,
-            Image = "info",
-        })
-   end
+local savedCamCFrame = cam.CFrame
+
+cam.CameraType = Enum.CameraType.Scriptable
+cam.CFrame = CFrame.new(-9, 106, -18)
+
+enableNoclip()
+player.Character.HumanoidRootPart.CFrame = CFrame.new(-65, 98, -18)
+
+task.wait(0.7)
+
+disableNoclip()
+player.Character.HumanoidRootPart.CFrame = CFrame.new(-68, 228, -18)
+
+cam.CameraType = Enum.CameraType.Custom
+cam.CFrame = savedCamCFrame
+
+Rayfield:Notify({
+    Title = "Success!",
+    Content = "Success!",
+    Duration = 2.5,
+    Image = "info",
+})
+
+end
+
 })
 
 MainTab:CreateButton({
