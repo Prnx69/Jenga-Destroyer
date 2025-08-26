@@ -113,7 +113,7 @@ cam.CFrame = CFrame.lookAt(cam.CFrame.Position, player.Character.HumanoidRootPar
 
 Rayfield:Notify({
     Title = "Success!",
-    Content = "Телепорт завершён, камера восстановлена.",
+    Content = "Success!",
     Duration = 2.5,
     Image = "info",
 })
@@ -248,3 +248,4 @@ local Button = ScriptsTab:CreateButton({
 local CreditsTab = Window:CreateTab("Credits")
 
 local Paragraph = CreditsTab:CreateParagraph({Title = "Credits:", Content = "Coder: prnxz69"})
+
