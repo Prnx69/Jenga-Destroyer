@@ -90,27 +90,30 @@ local MainTab = Window:CreateTab("Main")
 local MainSection = MainTab:CreateSection("Main Functions")
 
 MainTab:CreateButton({
-   Name = "Win the game (Only in Tower's team)",
-   Callback = function()
+Name = "Win the game (Only in Tower's team)",
+    Callback = function()
+local savedCamType = cam.CameraType
 local savedCamCFrame = cam.CFrame
 
+local initialCamPosition = cam.CFrame.Position
+
+local lookDownTarget = player.Character.HumanoidRootPart.Position
 cam.CameraType = Enum.CameraType.Scriptable
-cam.CFrame = CFrame.new(-9, 106, -18)
+cam.CFrame = CFrame.lookAt(initialCamPosition, lookDownTarget)
 
 enableNoclip()
 player.Character.HumanoidRootPart.CFrame = CFrame.new(-65, 98, -18)
-
-task.wait(0.7)
-
+task.wait(0.5)
 disableNoclip()
+
 player.Character.HumanoidRootPart.CFrame = CFrame.new(-68, 228, -18)
 
-cam.CameraType = Enum.CameraType.Custom
-cam.CFrame = savedCamCFrame
+cam.CameraType = savedCamType
+cam.CFrame = CFrame.lookAt(cam.CFrame.Position, player.Character.HumanoidRootPart.Position)
 
 Rayfield:Notify({
     Title = "Success!",
-    Content = "Success!",
+    Content = "Телепорт завершён, камера восстановлена.",
     Duration = 2.5,
     Image = "info",
 })
