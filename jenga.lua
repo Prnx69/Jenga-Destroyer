@@ -245,7 +245,15 @@ local Button = ScriptsTab:CreateButton({
    end,
 })
 
+local Button = ScriptsTab:CreateButton({
+   Name = "Server Hop",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Prnx69/Jenga-Destroyer/refs/heads/main/Server%20hop.lua"))()
+   end,
+})
+
 local CreditsTab = Window:CreateTab("Credits")
 
 local Paragraph = CreditsTab:CreateParagraph({Title = "Credits:", Content = "Coder: prnxz69"})
+
 
