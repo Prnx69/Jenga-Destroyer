@@ -206,8 +206,8 @@ local platform = workspace:FindFirstChild("SafePlatform")
 
 if not platform then
     platform = Instance.new("Part")
-    platform.Name = "SafePlatform" -- имя платформы
-    platform.Size = Vector3.new(100, 3, 100)
+    platform.Name = "SafePlatform"
+    platform.Size = Vector3.new(50, 1, 50)
     platform.CFrame = CFrame.new(-31, 202, -135)
     platform.Anchored = true
     platform.CanCollide = true
@@ -255,6 +255,7 @@ local Button = ScriptsTab:CreateButton({
 local CreditsTab = Window:CreateTab("Credits")
 
 local Paragraph = CreditsTab:CreateParagraph({Title = "Credits:", Content = "Coder: prnxz69"})
+
 
 
 
